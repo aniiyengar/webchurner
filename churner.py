@@ -212,4 +212,4 @@ def churn(req_url, body):
     h = get_title_tag(soup)
     d = get_date_string(h)
 
-    return h.string, d, convert_tags(req_url, seq)
+    return h.string.strip(), d, convert_tags(req_url, seq)
