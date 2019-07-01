@@ -180,11 +180,11 @@ def convert_one_tag(req_url, tag):
     elif name == 'h6':
         return '#### ' + convert_tags(req_url, tag.children) + '\n'
     elif name == 'img' or name == 'image':
-        return '![image not found](' + convert_url_string(
-                                            req_url, tag.get('src', '')) + ')'
+        return ' ![image not found](' + convert_url_string(
+                                            req_url, tag.get('src', '')) + ') '
     elif name == 'a':
-        return '[' + convert_tags(req_url, tag.children) + '](' + \
-               convert_url_string(req_url, tag.get('href', '')) + ')'
+        return ' [' + convert_tags(req_url, tag.children) + '](' + \
+               convert_url_string(req_url, tag.get('href', '')) + ') '
     elif name == 'blockquote':
         return '> ' + convert_tags(req_url, tag.children) + '\n\n'
     else:
@@ -195,7 +195,7 @@ Given a list of tags, convert them to markdown. Mutually recursive
 with convert_one_tag.
 """
 def convert_tags(req_url, tags):
-    return ' '.join(convert_one_tag(req_url, tag) for tag in tags)
+    return ''.join(convert_one_tag(req_url, tag) for tag in tags)
 
 """
 Main method to turn the HTML into markdown.
