@@ -51,7 +51,7 @@ ptyprocess==0.6.0
 pyfiglet==0.7.5
 Pygments==2.3.1
 pyparsing==2.3.1
-PyPDF2==1.26.0
+PyPDF2==1.27.5
 pyrsistent==0.14.11
 python-dateutil==2.7.5
 python-slugify==2.0.1
